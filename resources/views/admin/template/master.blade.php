@@ -9,13 +9,13 @@
 
     {{-- <link rel="preconnect" href="https://fonts.gstatic.com"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('templateAdmin/')}}/dist/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="{{asset('templateAdmin/')}}/dist/assets/vendors/simple-datatables/style.css">
-    <link rel="stylesheet" href="{{asset('templateAdmin/')}}/dist/assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="templateAdmin//dist/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="templateAdmin//dist/assets/vendors/simple-datatables/style.css">
+    <link rel="stylesheet" href="templateAdmin//dist/assets/vendors/iconly/bold.css">
 
-    <link rel="stylesheet" href="{{asset('templateAdmin/')}}/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="{{asset('templateAdmin/')}}/dist/assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{asset('templateAdmin/')}}/dist/assets/css/app.css">
+    <link rel="stylesheet" href="templateAdmin//dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="templateAdmin//dist/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="templateAdmin//dist/assets/css/app.css">
 
 </head>
 
@@ -37,9 +37,9 @@
 
 
 
-    <script src="{{asset('templateAdmin/dist/assets/vendors/simple-datatables/simple-datatables.js')}}"></script>
-    {{-- <script src="{{asset('templateAdmin/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script> --}}
-    <script src="{{asset('templateAdmin/dist/assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="templateAdmin/dist/assets/vendors/simple-datatables/simple-datatables.js"></script>
+    {{-- <script src="templateAdmin/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script> --}}
+    <script src="templateAdmin/dist/assets/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // Simple Datatable
@@ -49,14 +49,14 @@
         let dataTable2 = new simpleDatatables.DataTable(table2);
 
     </script>
-    <script src="{{asset('templateAdmin/dist/assets/vendors/jquery/jquery.min.js')}}"></script>
+    <script src="templateAdmin/dist/assets/vendors/jquery/jquery.min.js"></script>
     <script>
         function goBack() {
             window.history.back();
         }
 
     </script>
-    <script src="{{asset('templateAdmin/dist/assets/js/main.js')}}"></script>
+    <script src="templateAdmin/dist/assets/js/main.js"></script>
 </body>
 
 </html>
