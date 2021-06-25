@@ -67,7 +67,7 @@ class EventController extends Controller
             'end_date' => $request->end_date,
             'category_id' => $request->category_id,
         ]);
-        return redirect('event');
+        return redirect('admin/event');
     }
 
 
@@ -139,7 +139,7 @@ class EventController extends Controller
                 'category_id' => $request->category_id,
             ]);
         }
-        return redirect('event');
+        return redirect('admin/event');
         // Storage::delete($event->gambar);
 
     }
@@ -159,6 +159,6 @@ class EventController extends Controller
             @unlink($gambar);
         }
         $event->delete();
-        return redirect('event');
+        return redirect('admin/event');
     }
 }
