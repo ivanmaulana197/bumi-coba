@@ -42,10 +42,10 @@
                             <td>{{$data->created_at}}</td>
                             <td>
                                 <a href="{{route('category.edit', $data->id)}}" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
-                                <form class="float-left m-1" action="{{ route('category.destroy', [$data->id]) }}" method="POST">
+                                <form action="{{ route('category.destroy', [$data->id]) }}" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <button class="btn btn-warning"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                 </form>
                             </td>
 
