@@ -121,7 +121,7 @@
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{route('event.edit', $data->id)}}" class="btn btn-warning" name="edit"><i class="bi bi-pencil"></i></a>
-                                            <a href="{{'hapus/event/'.$data->id}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="{{route('event.destroy', $data->id)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -173,7 +173,7 @@
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{route('event.edit', $data->id)}}" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
-                                            <a href="{{'hapus/event/'.$data->id}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="{{route('event.destroy', $data->id)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
