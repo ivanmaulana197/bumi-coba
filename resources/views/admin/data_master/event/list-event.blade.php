@@ -65,7 +65,7 @@
                                 <form class="float-left m-1" action="{{ route('event.destroy', [$data->id]) }}" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <button><i class="dw dw-delete-3"></i> Delete</button>
+                                    <button class="btn btn-warning"><i class="bi bi-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
