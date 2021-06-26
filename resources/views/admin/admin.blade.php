@@ -180,7 +180,7 @@
                                             <form action="{{ route('event.destroy', [$data->id]) }}" method="POST">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                                <button class="btn btn-danger"><i class="bi bi-trash"></i>Delete</button>
                                             </form>
                                         </div>
                                     </td>
