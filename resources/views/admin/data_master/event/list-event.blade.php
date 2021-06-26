@@ -62,7 +62,11 @@
                             </td>
                             <td>
                                 <a href="{{route('event.edit', $data->id)}}" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
-                                <a href="{{route('event.destroy', $data->id)}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                <form class="float-left m-1" action="{{ route('content.destroy', [$data->id]) }}" method="POST">
+                                    @method('delete')
+                                    @csrf
+                                    <button><i class="dw dw-delete-3"></i> Delete</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
