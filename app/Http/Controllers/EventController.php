@@ -55,12 +55,13 @@ class EventController extends Controller
         if ($request->file('gambar')) {
             $file = $request->file('gambar');
             $nama_file = time() . '_' . Str::slug($request->title) . '.' . $file->extension();
-            $file->move('img/event', $nama_file);
+            $store = \Storage::disk("google")->putFileAs("", $file, $nama_file);
+            $url = \Storage::disk('google')->url($store);
         }
         Event::create([
             'title' => $request->title,
             'deskripsi' => $request->deskripsi,
-            'gambar' => $nama_file,
+            'gambar' => $url,
             'slug' => Str::slug($request->title),
             'status' => $request->status,
             'start_date' => $request->start_date,
@@ -117,15 +118,12 @@ class EventController extends Controller
         if ($request->file('gambar')) {
             $file = $request->file('gambar');
             $nama_file = time() . '_' . Str::slug($request->title) . '.' . $file->extension();
-            $file->move('img/event', $nama_file);
-            $gambar = public_path('/img/event/') . $event->gambar;
-            if (file_exists($gambar)) {
-                @unlink($gambar);
-            }
+            $store = \Storage::disk("google")->putFileAs("", $file, $nama_file);
+            $url = \Storage::disk('google')->url($store);
             $event->update([
                 'title' => $request->title,
                 'deskripsi' => $request->deskripsi,
-                'gambar' => $nama_file,
+                'gambar' => $url,
                 'slug' => Str::slug($request->title),
                 'status' => $request->status,
                 'category_id' => $request->category_id,
@@ -153,12 +151,7 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = Event::find($id);
-
-        $gambar = public_path('/img/event/') . $event->gambar;
-        if (file_exists($gambar)) {
-            @unlink($gambar);
-        }
         $event->delete();
-        return redirect('admin/event');
+        return redirect()->back();
     }
 }

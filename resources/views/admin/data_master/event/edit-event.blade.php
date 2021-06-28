@@ -92,7 +92,7 @@
                                             <!-- <label class="custom-file-label">Choose file</label> -->
                                             <small class="text-danger">@error('gambar') {{$message}} @enderror</small>
                                             @if(strlen($event->gambar)>0)
-                                            <img src="{{asset('img/event/'.$event->gambar)}}" alt="" width="200px">
+                                            <img src="{{$event->gambar}}" alt="" width="200px">
                                             @endif
                                             <!-- <label class="custom-file-label">Choose file</label> -->
 

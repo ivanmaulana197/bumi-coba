@@ -13,23 +13,23 @@
     <ul class="menu">
         <li class="sidebar-title">Menu</li>
 
-        <li class="sidebar-item active ">
-            <a href="{{route('home')}}" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('admin') ? 'active' : ''}}">
+            <a href="{{route('adminhome')}}" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard</span>
             </a>
         </li>
 
-        <li class="sidebar-item  has-sub">
+        <li class="sidebar-item  has-sub {{ request()->is('admin/category') || request()->is('admin/event') ? 'active' : ''}}">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-stack"></i>
                 <span>Data Master</span>
             </a>
             <ul class="submenu ">
-                <li class="submenu-item ">
+                <li class="submenu-item {{ request()->is('admin/category') ? 'active' : ''}} ">
                     <a href="{{route('category.index')}}">Category</a>
                 </li>
-                <li class="submenu-item ">
+                <li class="submenu-item {{ request()->is('admin/event') ? 'active' : ''}}">
                     <a href="{{route('event.index')}}">Event</a>
                 </li>
             </ul>

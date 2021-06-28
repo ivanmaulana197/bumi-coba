@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\HomeController;
 use App\Models\Event;
 
@@ -17,9 +18,9 @@ use App\Models\Event;
 |
 */
 
-Route::get('/home', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('home/category', [HomeController::class, 'category'])->name('homeCategory');
+Route::get('login', [HomeController:: class, 'login'])->name('login');
 // Route::get('/category', function () {
 //     return view('admin.data-category');
 // });
@@ -34,9 +35,11 @@ Route::get('/home', function () {
 
 
 Route::prefix('admin')->group(function (){
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [AdminHomeController::class, 'index'])->name('adminhome');
     Route::resource('category', CategoryController::class);
     Route::resource('event', EventController::class);
+
+
 });
 
 

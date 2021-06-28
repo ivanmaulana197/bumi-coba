@@ -13,7 +13,7 @@
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('adminhome')}}">Dashboard</a></li>
                         <li class="breadcrumb-item"><a href="#">Data Master</a></li>
                         <li class="breadcrumb-item active" aria-current="page">DataTable</li>
                     </ol>
@@ -47,7 +47,7 @@
                             <td>{{$data->title}}</td>
                             <td>
                                 @if(strlen($data->gambar)>0)
-                                <img src="{{asset('img/event/'.$data->gambar)}}" alt="" width="200px">
+                                <img src="{{$data->gambar}}" alt="" width="200px">
                                 @endif
                             </td>
                             <td>{{$data->Category->nama_category}}</td>
@@ -61,12 +61,13 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{route('event.edit', $data->id)}}" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
+                                <a href="{{route('event.edit', $data->id)}}" class="btn btn-warning"><i class="bi bi-pencil"></i>Edit</a>
                                 <form action="{{ route('event.destroy', [$data->id]) }}" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-danger"> <i class="bi bi-trash"></i> Delete</button>
                                 </form>
+
                             </td>
                         </tr>
                         @endforeach
